@@ -7,8 +7,11 @@ on:
 
 jobs:
   deploy:
-    name: deploy
+    name: serverless deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
     strategy:
       matrix:
         node-version: [16.x]
@@ -18,7 +21,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd backend && npm ci
+    - run: npm ci
     - name: serverless deploy
       uses: serverless/github-action@v3.1
       with:
