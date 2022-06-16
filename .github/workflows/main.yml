@@ -5,15 +5,15 @@ on:
     branches:
       - main
       
-defaults:
-  run:
-    working-directory: ./backend
+
     
 jobs:
   deploy:
     name: serverless deploy
     runs-on: ubuntu-latest
-   
+    defaults:
+      run:
+        working-directory: ./backend
     strategy:
       matrix:
         node-version: [16.x]
