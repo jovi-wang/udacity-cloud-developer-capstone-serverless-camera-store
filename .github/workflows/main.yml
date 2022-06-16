@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-      
-
     
 jobs:
   deploy:
@@ -27,7 +25,9 @@ jobs:
     - name: serverless deploy
       uses: serverless/github-action@v3.1
       with:
-        args: deploy
+        args: -c "cd ./backend && serverless deploy"
+        entrypoint: /bin/sh
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
