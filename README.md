@@ -50,10 +50,41 @@ delete-item item
 
 Notes: user might need to refresh the page to see the reuploaded image after editing an item
 
+## Authentication
+
+[Auth0](https://auth0.com/) is used to manage data access and user sign in/sing out.
+Client will need to present the auth0 idToken in the http header like `Authentication = Bearer {{idToken}}`
+
 ## Backend
 
 backend is configured using Serverless framework deployed on AWS, you do not need to do any config on backend code
 
-## CIDI
+Here are all the endpoints:
 
-CICD is implemented via Github Action by using [action for serverless](https://github.com/marketplace/actions/serverless)
+- GET - /cameras (get all camera items)
+- POST - /cameras (create a new camera item)
+- PUT - /cameras/{cameraId} (update an existing camera item)
+- DELETE - /cameras/{cameraId} (delete a camera item)
+- GET - /cameras/{cameraId}/image-url (get image upload url)
+
+serverless CLI is required to deploy the backend with valid AWS credential setup
+
+```sh
+serverless deploy
+```
+
+## CICD
+
+CICD is implemented via Github Action by using [action for serverless](https://github.com/marketplace/actions/serverless). Every code push to `main` branch will trigger the Github Action, and this will run serverless deploy thus deploy the latest version to AWS
+
+![github action](/assets/github-action.png)
+
+## Project submission
+
+The rubrics I intend to align are:
+
+(Option 1): CI/CD, Github & Code Quality
+(Option 2): Functionality
+(Option 2): Codebase
+(Option 2): Best practices
+(Option 2): Architecture
