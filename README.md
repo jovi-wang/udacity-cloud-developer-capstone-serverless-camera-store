@@ -56,4 +56,4 @@ backend is configured using Serverless framework deployed on AWS, you do not nee
 
 ## CIDI
 
-CICD is implemented via Github Action
+CICD is implemented via Github Action by using [action for serverless](https://github.com/marketplace/actions/serverless)
