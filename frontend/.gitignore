@@ -9,3 +9,4 @@ dist-ssr
 .env.[mode].local
 
 package-lock.json
+yarn.lock

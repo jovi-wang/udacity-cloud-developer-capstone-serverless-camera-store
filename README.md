@@ -57,7 +57,7 @@ Client will need to present the auth0 idToken in the http header like `Authentic
 
 ## Backend
 
-backend is configured using Serverless framework deployed on AWS, you do not need to do any config on backend code
+backend is configured using [Serverless](https://www.serverless.com) framework deployed on AWS
 
 Here are all the endpoints:
 
@@ -83,8 +83,8 @@ CICD is implemented via Github Action by using [action for serverless](https://g
 
 The rubrics I intend to align are:
 
-(Option 1): CI/CD, Github & Code Quality
-(Option 2): Functionality
-(Option 2): Codebase
-(Option 2): Best practices
-(Option 2): Architecture
+- (Option 1): CI/CD, Github & Code Quality
+- (Option 2): Functionality
+- (Option 2): Codebase
+- (Option 2): Best practices
+- (Option 2): Architecture
